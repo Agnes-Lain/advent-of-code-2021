@@ -12,6 +12,11 @@ class Day14 < AdventDay
   def convert_data(data)
     super
   end
+
+  def debug_input
+    "forward 5\ndown 5\nforward 8\nup 3\ndown 8\nforward 2"
+  end
+
 end
 
 Day14.solve
