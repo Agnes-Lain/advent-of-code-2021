@@ -2,6 +2,7 @@ require_relative 'common'
 
 class Day19 < AdventDay
   def first_part
+    input
   end
 
   def second_part

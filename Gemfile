@@ -7,6 +7,7 @@ gem 'byebug'
 gem 'dotenv'
 gem 'faraday'
 gem 'colorize'
+gem 'dijkstra'
 
 # If you duplicate your repository from year to year, feel free to keep your gems in additional groups here
 # Example:
