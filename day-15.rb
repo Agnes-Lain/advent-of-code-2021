@@ -1,49 +1,19 @@
 require_relative 'common'
-require "matrix"
+require 'dijkstra'
 
 
 class Day15 < AdventDay
   def first_part
-    # board = Matrix.zero(input[0].size, input.size)
-    @infinity = 1000
-    # m = Matrix[*input]
-    shortest_path_wg(input)
+    end_point = input.size - 1
+    ob = Dijkstra.new(0, 1, input)
+    ob
+
   end
 
   def second_part
   end
 
   private
-
-  def shortest_path_wg(matrix, init = 0)
-    vertex = []
-    v = matrix[0].length
-    dist = []
-    prev = []
-
-    v.times do |i|
-      dist << @infinity
-      prev << -1
-      vertex << i
-    end
-
-    dist[init] = 0
-
-    while vertex.length > 0
-
-      u = vertex.shift
-
-      matrix[u].each_with_index do |i,j|
-        next if i == 0
-        alt =  dist[u] + i
-        if alt < dist[j]
-          dist[j] = alt
-          prev[j]  = i
-        end
-      end
-    end
-    dist
-  end
 
   def convert_data(data)
     super.map{|s| s.split("").map{|e| e.to_i }}
