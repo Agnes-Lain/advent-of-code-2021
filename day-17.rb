@@ -10,22 +10,39 @@ class Day17 < AdventDay
 
     step = 0
     x_possible = []
-    x_init = 0
-    y_init = 0
-    x_velocity = 0
-    y_velocity = 0
 
+    for x in 0..x_max do
+      v = recursive_x_dist(x)
+      break if v > x_max
+      if v >= x_min && v <= x_max
+        x_possible << x
+      end
+    end
+    x_possible.each do |ve|
+      for y in
+    end
   end
 
   def second_part
   end
 
   private
-  def recursive_x_dist(x)
+  def recursive_x_dist(n)
   # Base case
     return 0 if n < 1
     # Recursive call
     n + recursive_x_dist(n-1)
+  end
+
+  def y_dist(y, y_min, y_max)
+    sum = 0
+    step = 0
+    while sum <= y_max && y > 0
+      sum += y
+      y = y - 1
+      step += 1
+    end
+    return sum, step
   end
 
   def convert_data(data)
